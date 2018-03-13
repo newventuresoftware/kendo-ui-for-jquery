@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Kendo UI Templates Demo</title>
+
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css">
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.rtl.min.css">
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.default.min.css">
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.mobile.all.min.css">
+
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/angular.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/jszip.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div id="main"></div>
+
+        <script type="x/kendo-template" id="list-template">
+            <ul>
+            # for (var i = 0; i < items.length; i++) { #
+                <li>
+                    <strong>#: items[i].title #</strong>
+                    <span>(#: items[i].year #)</span>,
+                    <span>#: items[i].rating #</span>
+                </li>
+             # } #
+             </ul>
+        </script>
+        
+        <script>
+         function renderHeader() {
+             var headerTemplateFn = kendo.template('<h1> #: title #</h1>');
+             $('#header').html(headerTemplateFn({ title: 'Movie List' }));
+         }
+
+         function renderList() {
+             var movies = [
+                 { year: 1964, title: 'Dr. Strangelove', rating: 9 },
+                 { year: 1999, title: 'Eyes Wide Shut', rating: 7 },
+                 { year: 2007, title: 'No Country For Old Men', rating: 8 },
+                 { year: 2006, title: 'The Departed', rating: 7 },
+                 { year: 1993, title: 'Schindler\'s List', rating: 8 }
+             ];
+
+             var listTemplateString = $('#list-template').html();
+             var listTemplateFn = kendo.template(listTemplateString);
+             
+             $('#main').html(listTemplateFn({ items: movies }));
+         }
+         
+         renderHeader();
+         renderList();
+
+        </script>
+    </body>
+</html>

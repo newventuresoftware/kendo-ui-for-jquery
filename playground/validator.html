@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kendo UI Validator Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+</head>
+
+<body>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+    </style>
+
+    <div id="myform">
+        <ul>
+            <li>
+                <label for="firstName">First Name:</label>
+                <input id="firstName" name="firstName"/>
+            </li>
+            <li>
+                <label for="lastName">Last Name:</label>
+                <input name="lastName" id="lastName"/>
+            </li>
+            <li>
+                <label for="age">Age:</label>
+                <input id="age" name="age" min="1" max="100" step="2" /> 
+            </li>
+            <li>
+                <label for="emal">Email:</label>
+                <input name="email" id="email" />
+            </li>
+            <button id="save" type="button">Save</button>
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            
+        });
+    </script>
+</body>
+
+</html>

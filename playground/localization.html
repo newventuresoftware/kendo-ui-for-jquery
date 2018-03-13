@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kendo UI Basic Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+</head>
+
+<body>
+    <table id="grid">
+        <thead>
+            <tr>
+                <th data-type="string">Name</th>
+                <th data-type="number">Sales</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Emilia</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>Emanuela</td>
+                <td>2250</td>
+            </tr>
+            <tr>
+                <td>Tsvetelina Yaneva</td>
+                <td>1550</td>
+            </tr>
+            <tr>
+                <td>Galena</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>Preslava</td>
+                <td>3120</td>
+            </tr>
+            <tr>
+                <td>Toni Storaro</td>
+                <td>4000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $('#grid').kendoGrid({
+                sortable: true,
+                filterable: true
+            });
+        });
+    </script>
+</body>
+
+</html>

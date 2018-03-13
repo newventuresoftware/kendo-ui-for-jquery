@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Demo</title>
+    <script src="./scripts/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="my-button">Click!</button>
+    <script>
+        $(document).ready(function () {
+            $('#my-button').click(function() {
+                $('body').css('background-color', 'skyblue');
+            });
+        });
+    </script>
+</body>
+
+</html>

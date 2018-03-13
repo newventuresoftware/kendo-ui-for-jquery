@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Color Picker Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+    <script src="./scripts/jszip.min.js"></script>
+    <script src="./scripts/pako_deflate.min.js"></script>
+</head>
+
+<body>
+    <input id="picker" />
+    <div id="office"></div>
+    <script>
+        // $(document).ready(function () {
+        //     $('#picker').kendoColorPicker({
+        //         palette: "websafe",
+        //         change: function (e) {
+        //             $('body').css('background-color', e.value);
+        //         }
+        //     });
+        $(document).ready(function () {
+            $('#picker').kendoColorPicker({
+                palette: [
+                    "#ffffff", "#000000", "#d2d2d2", "#666666", "#ff388c", "#e40059", "#9c007f", "#68007f", "#005bd3", "#00349e",
+                    "#f2f2f2", "#7f7f7f", "#bdbdbd", "#e0e0e0", "#ffd7e8", "#ffc6dc", "#ffb8f1", "#f1b2ff", "#c3dcff", "#b8cfff",
+                    "#d8d8d8", "#595959", "#9d9d9d", "#c1c1c1", "#ffafd1", "#ff8eba", "#ff71e4", "#e365ff", "#87baff", "#72a0ff",
+                    "#bfbfbf", "#3f3f3f", "#696969", "#a3a3a3", "#ff87ba", "#ff5597", "#ff2ad7", "#d519ff", "#4b98ff", "#2b71ff",
+                    "#a5a5a5", "#262626", "#343434", "#4c4c4c", "#e90062", "#ab0042", "#75005f", "#4e005f", "#00449e", "#002676",
+                    "#7f7f7f", "#0c0c0c", "#151515", "#333333", "#9b0041", "#72002c", "#4e003f", "#34003f", "#002d69", "#00194f"
+                ],
+                change: function (e) {
+                    $('body').css('background-color', e.value);
+                }
+            });
+            $("#office").kendoColorPalette({
+                    palette: [
+                        "#ffffff", "#000000", "#eeece1", "#1f497d", "#4f81bd", "#c0504d", "#9bbb59", "#8064a2", "#8064a2", "#f79646",
+                        "#f2f2f2", "#7f7f7f", "#ddd9c3", "#c6d9f0", "#dbe5f1", "#f2dcdb", "#ebf1dd", "#e5e0ec", "#dbeef3", "#fdeada",
+                        "#d8d8d8", "#595959", "#c4bd97", "#8db3e2", "#b8cce4", "#e5b9b7", "#d7e3bc", "#ccc1d9", "#b7dde8", "#fbd5b5",
+                        "#bfbfbf", "#3f3f3f", "#938953", "#548dd4", "#95b3d7", "#d99694", "#c3d69b", "#b2a2c7", "#92cddc", "#fac08f",
+                        "#a5a5a5", "#262626", "#494429", "#17365d", "#366092", "#953734", "#76923c", "#5f497a", "#31859b", "#e36c09",
+                        "#7f7f7f", "#0c0c0c", "#1d1b10", "#0f243e", "#244061", "#632423", "#4f6128", "#3f3151", "#205867", "#974806"
+                    ]
+                })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kendo UI Masked Input Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+</head>
+
+<body>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+    </style>
+
+    <div id="myform">
+        <ul>
+            <li>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required />
+            </li>
+            <li>
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName" required />
+            </li>
+            <li>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" max="100" step="2" required /> 
+            </li>
+            <li>
+                <label for="emal">Email:</label>
+                <input type="email" name="email" id="email" required />
+            </li>
+            <button id="save" type="button">Save</button>
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize the Kendo UI Validator on your "form" container
+            // (NOTE: Does NOT have to be a HTML form tag)
+            var validator = $("#myform").kendoValidator().data("kendoValidator");
+
+            // Validate the input when the Save button is clicked
+            $("#save").on("click", function () {
+                if (validator.validate()) {
+                    console.log("valid");
+                }
+                else {
+                    console.log("invalid");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

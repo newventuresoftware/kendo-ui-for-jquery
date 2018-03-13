@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Plugin Demo</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <body>
+        <h1>jQuery Rocks!</h1>
+        <script>
+            // add color as parameter
+            $.fn.highlightOnHover = function (color) {
+                var element = this;
+
+                element.on('mouseenter', function () {
+                    element.css('background-color', color);
+                });
+
+                element.on('mouseout', function () {
+                    element.css('background-color', 'white');
+                });
+            };
+
+            $('h1').highlightOnHover('red');
+        </script>
+    </body>
+
+</html>

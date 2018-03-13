@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kendo UI Basic Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+    <script src="./scripts/kendo.culture.bg-BG.min.js"></script>
+</head>
+
+<body>
+    <input id="datepicker" />
+    <button id="selbutton">What is selected</button>
+    <button id="delbutton">Destroy widget</button>
+    <script>
+        kendo.culture('bg-BG');
+
+        $(document).ready(function () {
+            var datePicker = $('#datepicker').kendoDatePicker({
+                value: new Date(2017, 0, 1)
+            }).data('kendoDatePicker');
+        });
+
+        // kendo.culture("en-US");
+        // kendo.toString(1234.567, "n"); //1,234.57
+        // kendo.culture("de-DE");
+        // kendo.toString(1234.567, "n3"); //1.234,567
+
+        // current culture is "en-US"
+        // kendo.parseDate("12/22/2000"); //Fri Dec 22 2000
+        // kendo.parseDate("2000/12/22", "yyyy/MM/dd");
+        // kendo.parseDate("2012.07.16", "yyyy/MM/dd", "de-DE");
+
+        // Monday, November 06, 2000
+        // kendo.toString(new Date(2000, 10, 6), "D")
+        // Monday, November 06, 2000 12:00:00 AM
+        // kendo.toString(new Date(2000, 10, 6), "F") 
+    </script>
+</body>
+
+</html>

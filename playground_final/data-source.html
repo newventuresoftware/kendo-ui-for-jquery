@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Data Source Demo</title>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.default.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+</head>
+
+<body>
+    <div id="chart"></div>
+    <div id="grid"></div>
+    <script>
+        var dataSource = new kendo.data.DataSource({
+            data: [
+                { employee: "Joe Smith", sales: 2000 },
+                { employee: "Jane Smith", sales: 2250 },
+                { employee: "Will Roberts", sales: 1550 },
+                { employee: "John Hopcroft", sales: 1000 },
+                { employee: "Maggies Simpson", sales: 3120 }
+            ],
+            schema: {
+                model: {
+                    fields: {
+                        employee: { type: 'string', title: "Employee" },
+                        sales: { type: 'number', title: "Sales" }
+                    }
+                }
+            }
+        });
+
+        $(function () {
+            
+            $("#chart").kendoChart({
+                title: {
+                    text: "Employee Sales"
+                },
+                dataSource: dataSource,
+                series: [{
+                    field: "sales",
+                    name: "Sales in Units"
+                }],
+                categoryAxis: {
+                    field: "employee"
+                }
+            });
+
+            $("#grid").kendoGrid({
+                dataSource: dataSource,
+                filterable: true,
+                sortable: true,
+                columns: [{
+                    field: "employee",
+                    title: "Employee"
+                }, {
+                    field: "sales",
+                    title: 'Sales',
+                    template: '#= kendo.toString(sales, "N0") #',
+                    type: 'number'
+                }]
+            });
+        })
+    </script>
+</body>
+
+</html>

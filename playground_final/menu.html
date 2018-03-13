@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Data Source Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+    <script src="./scripts/jszip.min.js"></script>
+    <script src="./scripts/pako_deflate.min.js"></script>
+</head>
+
+<body>
+    <ul id="menu">
+        <li>Item 1</li>
+        <li>
+            Item 2
+            <ul>
+                <li>SubItem 1</li>
+                <li>SubItem 2</li>
+                <li>SubItem 3</li>
+            </ul>
+        </li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <script>
+        $(document).ready(function () {
+            $('#menu').kendoMenu();
+        });
+    </script>
+</body>
+
+</html>

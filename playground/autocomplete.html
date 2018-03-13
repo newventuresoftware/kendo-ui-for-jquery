@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kendo UI Autocomplete Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+</head>
+
+<body>
+    <input id="autocomplete" />
+
+    <script>
+        function changeHandler(e) {
+            console.log('Value changed to:'+ e.sender.value());
+        }
+
+        $(document).ready(function () {
+            var autoComplete = $('#autocomplete').kendoAutoComplete({
+                dataSource: ['Bulgaria', 'USA', 'Germany', 'Greece', 'Japan']
+            }).data('kendoAutoComplete');
+
+            autoComplete.bind("change", changeHandler);
+        })
+
+        
+        // debugger;
+        // autoComplete.unbind('change', changeHandler);
+    </script>
+</body>
+
+</html>

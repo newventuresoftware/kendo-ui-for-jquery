@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kendo UI Basic Demo</title>
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.default.min.css">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/kendo.all.min.js"></script>
+</head>
+
+<body>
+    <input id="datepicker" />
+    <button id="selbutton">What is selected</button>
+    <button id="delbutton">Destroy widget</button>
+    <script>
+        $(document).ready(function () {
+            var datePicker = $('#datepicker').kendoDatePicker({
+                value: new Date(2017, 0, 1)
+            }).data('kendoDatePicker');
+
+            $('#selbutton').click(function () {
+                //var datePicker = $('#datepicker').data('kendoDatePicker');
+                console.log(datePicker.value());
+            });
+            $('#delbutton').click(function () {
+                var datePicker = $('#datepicker').data('kendoDatePicker');
+                datePicker.wrapper.remove();
+                datePicker.destroy();
+            });
+        });
+    </script>
+</body>
+
+</html>
