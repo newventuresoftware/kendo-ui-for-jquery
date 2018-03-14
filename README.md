@@ -8,7 +8,7 @@ cd kendo-ui-for-jquery
 ```
 
 ## Slides
-If you have cloned the repository, open slides/kendo-ui jquery.pptx or check out the slides directly [here](https://1drv.ms/p/s!Ag88TW7Y89tw8UI8nPfTrwAhLLzG).
+If you have cloned the repository, open slides/kendo-ui jquery.pptx or check out the slides directly [here](https://1drv.ms/p/s!Ag88TW7Y89tw8Ua00-_xdBpyQ81Z).
 
 ## Running the Demos
 
